@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int r, c, i, j;
+    
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &r, &c);
+    
+    int mat1[r][c], mat2[r][c];
+    
+    // Input Matrix 1
+    printf("Enter elements of Matrix 1:\n");
+    for(i = 0; i < r; i++) {
+        for(j = 0; j < c; j++) {
+            scanf("%d", &mat1[i][j]);
+        }
+    }
+    
+    // Input Matrix 2
+    printf("Enter elements of Matrix 2:\n");
+    for(i = 0; i < r; i++) {
+        for(j = 0; j < c; j++) {
+            scanf("%d", &mat2[i][j]);
+        }
+    }
+    
+    // Check equality
+    int equal = 1;  // Assume equal
+    for(i = 0; i < r; i++) {
+        for(j = 0; j < c; j++) {
+            if(mat1[i][j] != mat2[i][j]) {
+                equal = 0;  // Not equal
+                break;
+            }
+        }
+        if(equal == 0) break;
+    }
+    
+    if(equal) {
+        printf("Matrices are EQUAL \n");
+    } else {
+        printf("Matrices are NOT EQUAL \n");
+    }
+    
+    return 0;
+}
